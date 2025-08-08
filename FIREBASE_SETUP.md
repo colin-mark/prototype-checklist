@@ -48,20 +48,20 @@ const firebaseConfig = {
 };
 ```
 
-## 🔒 Step 6: Set up Firestore Security Rules
-
-In the Firestore Database section, go to "Rules" tab and replace with:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    // Users can only access their own data
-    match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-  }
-}
+≈# 🔒 Step 6: Set up Firestore Security Rules
+≈
+≈n the Firestore Database section, go to "Rules" tab and replace with:
+≈
+≈``javascript
+≈ules_version = '2';
+≈ervice cloud.firestore {
+≈ match /databases/{database}/documents {
+≈   // Users can only access their own data
+≈   match /users/{userId}/{document=**} {
+≈     allow read, write: if request.auth != null && request.auth.uid == userId;
+≈   }
+≈ }
+≈
 ```
 
 ## 🚀 Step 7: Test Your Setup
